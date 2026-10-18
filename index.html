@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 🎂</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #190033, #4b0082, #ff1493);
+    color: white;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 35px rgba(255,105,180,0.35);
+    backdrop-filter: blur(12px);
+    animation: appear 1.2s ease;
+    z-index: 2;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 35px;
+    color: #ffdc73;
+    text-shadow: 0 0 15px #ff69b4;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 29px;
+    color: #ffb6e6;
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+.cake {
+    font-size: 85px;
+    margin: 15px 0;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 15px 0 25px;
+    color: #fff0fa;
+}
+
+button {
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,105,180,0.6);
+    transition: transform 0.2s;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+.footer {
+    font-size: 12px;
+    margin-top: 25px;
+    color: #ffd6f2;
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.star {
+    position: fixed;
+    font-size: 18px;
+    animation: float 5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 { font-size: 29px; }
+    .name { font-size: 24px; }
+    .cake { font-size: 70px; }
+    .card { padding: 25px 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="card">
+
+    <h1>🎉 Happy Birthday 🎉</h1>
+
+    <div class="cake">🎂</div>
+
+    <!-- Change the name here -->
+    <div class="name" id="birthdayName">
+        Dear Bestie ❤️
+    </div>
+
+    <p class="message">
+        ✨ May your special day be filled with
+        love, laughter, happiness and beautiful memories! ✨
+        <br><br>
+        May all your dreams come true.
+        Keep smiling and shining forever! 💖
+    </p>
+
+    <button onclick="celebrate()">
+        🎊 Celebrate! 🎊
+    </button>
+
+    <div class="footer">
+        Made with ❤️ just for you
+    </div>
+
+</div>
+
+<script>
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+let pieces = [];
+let animationId;
+
+function resizeCanvas() {
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function createConfetti(amount = 160) {
+    for (let i = 0; i < amount; i++) {
+        pieces.push({
+            x: Math.random() * window.innerWidth,
+            y: -Math.random() * window.innerHeight,
+            size: Math.random() * 7 + 3,
+            speed: Math.random() * 3 + 2,
+            drift: Math.random() * 2 - 1,
+            rotation: Math.random() * 360,
+            color: [
+                "#ff1493",
+                "#ffd700",
+                "#00ffff",
+                "#ffffff",
+                "#7fff00",
+                "#ff69b4"
+            ][Math.floor(Math.random() * 6)]
+        });
+    }
+
+    if (!animationId) {
+        animateConfetti();
+    }
+}
+
+function animateConfetti() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    pieces.forEach(p => {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation * Math.PI / 180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2,
+                     p.size, p.size * 0.65);
+        ctx.restore();
+
+        p.y += p.speed;
+        p.x += p.drift;
+        p.rotation += 4;
+    });
+
+    pieces = pieces.filter(
+        p => p.y < window.innerHeight + 20
+    );
+
+    if (pieces.length > 0) {
+        animationId = requestAnimationFrame(animateConfetti);
+    } else {
+        animationId = null;
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    }
+}
+
+function celebrate() {
+    createConfetti(220);
+
+    const button = document.querySelector("button");
+    button.textContent = "🎉 Happy Birthday! 🎉";
+
+    setTimeout(() => {
+        button.textContent = "🎊 Celebrate! 🎊";
+    }, 2000);
+}
+
+// Floating stars
+function createStar() {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.textContent = ["✨", "💖", "⭐", "🎈"][
+        Math.floor(Math.random() * 4)
+    ];
+
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(star);
+
+    setTimeout(() => star.remove(), 6000);
+}
+
+setInterval(createStar, 500);
+
+// Start the celebration automatically
+createConfetti(120);
+</script>
+
+</body>
+</html>
