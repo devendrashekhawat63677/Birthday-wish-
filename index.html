@@ -1,288 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday 🎂</title>
-
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Dev Shekhawat 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    background: linear-gradient(135deg, #190033, #4b0082, #ff1493);
-    color: white;
-    overflow: hidden;
-    padding: 20px;
-}
-
-.card {
-    width: 100%;
-    max-width: 400px;
-    padding: 35px 20px;
-    text-align: center;
-    border-radius: 25px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 0 35px rgba(255,105,180,0.35);
-    backdrop-filter: blur(12px);
-    animation: appear 1.2s ease;
-    z-index: 2;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-h1 {
-    font-size: 35px;
-    color: #ffdc73;
-    text-shadow: 0 0 15px #ff69b4;
-    margin-bottom: 15px;
-}
-
-.name {
-    font-size: 29px;
-    color: #ffb6e6;
-    margin: 15px 0;
-    overflow-wrap: anywhere;
-}
-
-.cake {
-    font-size: 85px;
-    margin: 15px 0;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-.message {
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 15px 0 25px;
-    color: #fff0fa;
-}
-
-button {
-    background: linear-gradient(45deg, #ff1493, #ff69b4);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 14px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(255,105,180,0.6);
-    transition: transform 0.2s;
-}
-
-button:active {
-    transform: scale(0.94);
-}
-
-.footer {
-    font-size: 12px;
-    margin-top: 25px;
-    color: #ffd6f2;
-}
-
-#confetti {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
-}
-
-.star {
-    position: fixed;
-    font-size: 18px;
-    animation: float 5s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    20% { opacity: 1; }
-    100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@media (max-width: 360px) {
-    h1 { font-size: 29px; }
-    .name { font-size: 24px; }
-    .cake { font-size: 70px; }
-    .card { padding: 25px 15px; }
-}
-</style>
-</head>
-
-<body>
-
-<canvas id="confetti"></canvas>
-
-<div class="card">
-
-    <h1>🎉 Happy Birthday 🎉</h1>
-
-    <div class="cake">🎂</div>
-
-    <!-- Change the name here -->
-    <div class="name" id="birthdayName">
-        Dear Bestie ❤️
-    </div>
-
-    <p class="message">
-        ✨ May your special day be filled with
-        love, laughter, happiness and beautiful memories! ✨
-        <br><br>
-        May all your dreams come true.
-        Keep smiling and shining forever! 💖
-    </p>
-
-    <button onclick="celebrate()">
-        🎊 Celebrate! 🎊
-    </button>
-
-    <div class="footer">
-        Made with ❤️ just for you
-    </div>
-
-</div>
-
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Poppins,sans-serif;color:white;overflow-x:hidden;background:#190c22}
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 18px;position:relative;overflow:hidden}
+#home{background:linear-gradient(135deg,#120b24,#9b287b,#ff7e5f,#31104b);background-size:300% 300%;animation:bg 12s ease infinite}
+#message{background:linear-gradient(135deg,#42275a,#734b6d,#c06c84)}#gallery{background:linear-gradient(135deg,#141e30,#653a73,#c6426e)}#cakePage{background:linear-gradient(135deg,#ffecd2,#fcb69f);color:#532143}
+@keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}h1{font-family:Pacifico,cursive;font-size:clamp(2.5rem,9vw,5.7rem);line-height:1.2;text-shadow:0 5px 25px #0006;animation:pop 1.2s ease both}
+h2{font-family:'Dancing Script',cursive;font-size:clamp(2.4rem,7vw,4.5rem);margin-bottom:24px}.subtitle{font-family:'Dancing Script',cursive;font-size:clamp(1.5rem,5vw,2.5rem);margin:20px 0}
+button{font:600 1rem Poppins,sans-serif;border:0;border-radius:40px;padding:14px 23px;cursor:pointer;box-shadow:0 7px 22px #0003;transition:transform .2s}button:active{transform:scale(.96)}
+.start{margin-top:24px;background:#fff;color:#a02d75}.sound{position:fixed;right:12px;top:12px;z-index:30;border-radius:50%;width:48px;height:48px;padding:0;background:#fff;font-size:1.2rem}
+.float{position:absolute;font-size:clamp(25px,5vw,44px);animation:float 4s ease-in-out infinite;pointer-events:none}@keyframes float{50%{transform:translateY(-28px) rotate(12deg)}}@keyframes pop{from{opacity:0;transform:scale(.45)}to{opacity:1;transform:scale(1)}}
+.card{max-width:850px;width:100%;padding:clamp(22px,5vw,48px);border:1px solid #ffffff70;border-radius:30px;background:#ffffff20;box-shadow:0 18px 50px #0003;backdrop-filter:blur(9px)}
+.message-text{font-size:clamp(1rem,3vw,1.25rem);line-height:1.9}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:20px;width:min(100%,1100px)}
+.photo-card{background:#fff;color:#39223b;border-radius:22px;padding:12px;box-shadow:0 12px 30px #0004;animation:pop .8s both}.photo-card img{display:block;width:100%;height:300px;object-fit:cover;border-radius:15px}.photo-card p{padding:12px 4px;font-weight:700}
+.cake{font-size:clamp(6rem,18vw,10rem);animation:bounce 2s infinite}@keyframes bounce{50%{transform:translateY(-13px) rotate(3deg)}}
+.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:25;width:max-content;max-width:98%}.nav button{background:#fff;color:#7d2868;padding:10px 14px;font-size:.9rem}
+.confetti{position:fixed;top:-20px;z-index:40;pointer-events:none;animation:fall linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}.small{font-size:.9rem;margin-top:15px}
+@media(max-width:480px){.gallery{grid-template-columns:1fr;width:min(100%,360px)}.photo-card img{height:330px}.nav{gap:5px}.nav button{padding:9px 10px;font-size:.78rem}.page{padding:75px 15px}}
+</style></head><body>
+<button class="sound" id="soundBtn" onclick="toggleMusic()" aria-label="Music">🔇</button>
+<audio id="music" loop preload="none"><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"></audio>
+<section id="home" class="page"><span class="float" style="left:8%;top:12%">🎈</span><span class="float" style="right:8%;top:20%;animation-delay:.6s">💖</span><span class="float" style="left:12%;bottom:15%;animation-delay:1s">✨</span><span class="float" style="right:12%;bottom:16%;animation-delay:1.4s">🎉</span>
+<p>✨ TODAY IS ALL ABOUT YOU ✨</p><h1>Happy Birthday<br>Dev Shekhawat!</h1><p class="subtitle">A day full of love, smiles & beautiful memories 💖</p><button class="start" onclick="celebrate();go('message')">Open Your Surprise 🎁</button></section>
+<section id="message" class="page"><div class="card"><h2>Dear Dev 💌</h2><p class="message-text">Wishing you a birthday filled with happiness, laughter, love, and unforgettable moments. May every new day bring you confidence, success, and reasons to smile. Keep dreaming big, stay kind, and keep shining wherever life takes you. You deserve a wonderful year ahead! 🎂✨</p><p class="subtitle">Many many happy returns of the day! 🌹</p></div></section>
+<section id="gallery" class="page"><h2>Dev's Photo Memories 📸</h2><div class="gallery">
+<article class="photo-card"><img src="photo1.jpg" alt="Dev photo 1"><p>Style & confidence ✨</p></article>
+<article class="photo-card"><img src="photo2.jpg" alt="Dev photo 2"><p>Birthday star ⭐</p></article>
+<article class="photo-card"><img src="photo3.jpg" alt="Dev photo 3"><p>Making memories 📸</p></article>
+<article class="photo-card"><img src="photo4.jpg" alt="Dev photo 4"><p>Keep shining 💫</p></article>
+<article class="photo-card"><img src="photo5.jpg" alt="Dev photo 5"><p>Always unforgettable 💖</p></article>
+</div><p class="small">Your special moments, gathered in one place ❤️</p></section>
+<section id="cakePage" class="page"><div class="cake">🎂</div><h1 style="font-size:clamp(2.4rem,8vw,4.6rem);color:#a62e78">Make a Wish, Dev!</h1><p class="subtitle">Close your eyes and wish for something wonderful 🕯️</p><button class="start" onclick="blowCandles()">Blow the Candles 🌬️</button><p id="wish" class="subtitle" aria-live="polite"></p><button onclick="go('home')" style="margin-top:12px;background:#fff;color:#a62e78">Start Again ↻</button></section>
+<div class="nav"><button onclick="go('home')">🏠 Home</button><button onclick="go('message')">💌 Wish</button><button onclick="go('gallery')">📸 Photos</button><button onclick="go('cakePage')">🎂 Cake</button></div>
 <script>
-const canvas = document.getElementById("confetti");
-const ctx = canvas.getContext("2d");
-
-let pieces = [];
-let animationId;
-
-function resizeCanvas() {
-    const dpr = window.devicePixelRatio || 1;
-
-    canvas.width = window.innerWidth * dpr;
-    canvas.height = window.innerHeight * dpr;
-
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
-function createConfetti(amount = 160) {
-    for (let i = 0; i < amount; i++) {
-        pieces.push({
-            x: Math.random() * window.innerWidth,
-            y: -Math.random() * window.innerHeight,
-            size: Math.random() * 7 + 3,
-            speed: Math.random() * 3 + 2,
-            drift: Math.random() * 2 - 1,
-            rotation: Math.random() * 360,
-            color: [
-                "#ff1493",
-                "#ffd700",
-                "#00ffff",
-                "#ffffff",
-                "#7fff00",
-                "#ff69b4"
-            ][Math.floor(Math.random() * 6)]
-        });
-    }
-
-    if (!animationId) {
-        animateConfetti();
-    }
-}
-
-function animateConfetti() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-    pieces.forEach(p => {
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rotation * Math.PI / 180);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.size / 2, -p.size / 2,
-                     p.size, p.size * 0.65);
-        ctx.restore();
-
-        p.y += p.speed;
-        p.x += p.drift;
-        p.rotation += 4;
-    });
-
-    pieces = pieces.filter(
-        p => p.y < window.innerHeight + 20
-    );
-
-    if (pieces.length > 0) {
-        animationId = requestAnimationFrame(animateConfetti);
-    } else {
-        animationId = null;
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    }
-}
-
-function celebrate() {
-    createConfetti(220);
-
-    const button = document.querySelector("button");
-    button.textContent = "🎉 Happy Birthday! 🎉";
-
-    setTimeout(() => {
-        button.textContent = "🎊 Celebrate! 🎊";
-    }, 2000);
-}
-
-// Floating stars
-function createStar() {
-    const star = document.createElement("div");
-    star.className = "star";
-    star.textContent = ["✨", "💖", "⭐", "🎈"][
-        Math.floor(Math.random() * 4)
-    ];
-
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDuration = (Math.random() * 3 + 3) + "s";
-
-    document.body.appendChild(star);
-
-    setTimeout(() => star.remove(), 6000);
-}
-
-setInterval(createStar, 500);
-
-// Start the celebration automatically
-createConfetti(120);
-</script>
-
-</body>
-</html>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function celebrate(){const items=['🎉','💖','✨','🎊','🌸','⭐'];for(let i=0;i<55;i++){const el=document.createElement('span');el.className='confetti';el.textContent=items[Math.floor(Math.random()*items.length)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(16+Math.random()*18)+'px';el.style.animationDuration=(2+Math.random()*3)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),5500);}}
+async function toggleMusic(){const audio=document.getElementById('music'),btn=document.getElementById('soundBtn');if(audio.paused){try{await audio.play();btn.textContent='🔊';}catch(e){alert('Music ke liye internet on karke dobara try karein.');}}else{audio.pause();btn.textContent='🔇';}}
+function blowCandles(){document.getElementById('wish').textContent='🎉 Happy Birthday Dev Shekhawat! May your wishes come true! 💖';celebrate();}
+window.addEventListener('load',()=>setTimeout(celebrate,400));
+</script></body></html>
